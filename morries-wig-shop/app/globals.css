@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbe9dd;
+  --foreground: #3a1f1b;
+  --ink: #2b1c1a;
+  --harvest: #d96b27;
+  --sunshine: #f7ce6a;
+  --berry: #8e3b46;
+  --sage: #8fa68e;
+  --cream: #fff4e7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-harvest: var(--harvest);
+  --color-sunshine: var(--sunshine);
+  --color-berry: var(--berry);
+  --color-sage: var(--sage);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background:
+    radial-gradient(120% 140% at 90% 10%, rgba(247, 206, 106, 0.55) 0%, transparent 70%),
+    radial-gradient(90% 110% at 15% 85%, rgba(217, 107, 39, 0.35) 0%, transparent 75%),
+    var(--background);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(58, 31, 27, 0.12) 0.5px, transparent 0.5px);
+  background-size: 2px 2px;
+  mix-blend-mode: multiply;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
